@@ -1,10 +1,10 @@
 # 💻 Anotações do GoStack
 
 - [1. Back-end com Node.js](#1-back-end-com-node.js)
-- [2. Front-end com ReactJS](#2-front-end-com-reactJS)
-- [3. Mobile com React Native](#3-mobile-com-React-native)
+- [2. Front-end com ReactJS](#2-front-end-com-reactjs)
+- [3. Mobile com React Native](#3-mobile-com-react-native)
 - [4. Typescript](#4-typescript)
-- [5. Primeiro projeto Node.JS](#5-primeiro-projeto-Node.JS)
+- [5. Primeiro projeto Node.JS](#5-primeiro-projeto-node.js)
 - [6. Iniciando back-end do app](#6-iniciando-back-end-do-app)
 
 # 1. Back-end com Node.js
