@@ -1,0 +1,423 @@
+# 💻 Anotações do GoStack
+
+# Back-end com Node.js
+## Métodos HTTP
+
+- GET: Buscar informações do back-end;
+- POST: Criar uma informação no back-end;
+- PUT/PATCH: Alterar informação no back-end;
+    - PUT: Alterar todas as informações no back-end;
+    - PATCH: Alterar uma informação especifica no back-end;
+- DELETE: Deletar uma informação no back-end;
+
+## Tipos de parâmetros
+
+- Query Params: Filtros e paginação
+- Route Params: Identificação de recursos (Atualizar/Deletar)
+- Request Body: Conteúdo na hora de criar ou editar um recurso (Formato JSON que é utilizado)
+
+## Middleware
+
+### Interceptador de requisição que pode interromper totalmente a requisição ou alterar dados da requisição
+```jsx
+function validateProjectId(request,response, next) {
+    const {id} = request.params;
+
+    if(!isUuid(id)){
+        return response.status(400).json({error: 'Invalid project ID.'})
+    }
+
+    return next();
+}
+app.use('/projects/:id', validateProjectId)
+
+app.put('/projects/:id', (request,response) => {
+    const {id} = request.params;
+    const {title, owner} = request.body;
+
+    const projectIndex = projects.findIndex(project => project.id === id);
+
+    if(projectIndex < 0){
+        return response.status(400).json({error: 'Project not found'})
+    }
+
+    const project = {
+        id,
+        title,
+        owner,
+    }
+
+    projects[projectIndex] = project
+
+    return response.json(project);
+})
+```
+# Front-end com ReactJS
+# O que é React?
+
+- Biblioteca para construção de interfaces
+- Utilizando para construção de Single-Page-Applications
+- Podemos chamar de framework
+- Tudo fica dentro do Javascript
+- React: é biblioteca
+- ReactJS: é o comportamento no browser junto com ReactDOM
+- React Native: React + Biblioteca de elementos nativos
+
+# Vantagens
+
+- Organização do código
+    - Componentização
+- Divisão de responsabilidade
+    - Back-end: Regra de negócio
+    - Front-end: Interface
+- Uma API, múltiplos clientes
+- Programação declarativa
+# JSX (Javascript XML)
+
+- Escrever HTML dentro do Javascript
+- Com React podemos criar nosso próprios elementos
+
+# Imperativo versus Declarativo
+# Babel /  Webpack
+
+- O browser não entende todo o código
+- O Babel converte o código JS de uma forma que o browser entenda
+- O Webpack possui várias funções
+    - Criação do bundle, arquivo com todo código da aplicação
+    - Ensinar ao Javascript como importar arquivos CSS, imagens e etc
+    - Live reload com Webpack Dev Server
+
+# Fragmentos / Fragments
+
+Um padrão comum no React é que um componente pode retornar múltiplos elementos. Os Fragmentos permitem agrupar uma lista de filhos sem adicionar nós extras ao DOM.
+
+## Sintaxe curta
+
+Há uma sintaxe nova e mais curta que você pode usar para declarar fragmentos. Parecem tags vazias:
+
+```jsx
+import React from 'react';
+import Header from './components/Header'
+
+function App(){
+    return (
+		/*Fragments*/
+    <>
+        <Header title="Homepage">
+            <ul>
+                <li>Homepage</li>
+                <li>Projects</li>
+            </ul>
+        </Header>
+        <Header title="Projects">
+            <ul>
+                <li>Homepage</li>
+                <li>Projects</li>
+                <li>Login</li>
+            </ul>
+        </Header>
+    </>
+		/*Fragments*/
+    )
+}
+
+export default App;
+```
+
+# Conceito de Propriedades - Passando propriedades para os componentes
+
+### Children é propriedades passadas no conteúdo do componente
+
+```jsx
+import React from 'react';
+
+export default function Header({title, children}) {
+    return (
+        <header>
+            <h1>{title}</h1>
+            {children}
+        </header>
+    )
+}
+```
+
+```jsx
+import React from 'react';
+import Header from './components/Header'
+
+function App(){
+    return (
+    <>
+        <Header title="Homepage">
+            <ul>
+                <li>Homepage</li>
+                <li>Projects</li>
+            </ul>
+        </Header>
+        <Header title="Projects">
+            <ul>
+                <li>Homepage</li>
+                <li>Projects</li>
+                <li>Login</li>
+            </ul>
+        </Header>
+    </>
+    )
+}
+
+export default App;
+```
+# Mobile com React Native
+## O que é React Native?
+
+- Versão do React para desenvolvimento mobile
+- Multiplataforma
+- Podemos manipular cada plataforma de forma diferente
+- Interface nativa
+- Código não é transpilado
+- Outras plataformas migrando, Microsoft com Windows
+
+## Arquitetura
+## Sintaxe
+
+- A declaração de componentes é igual da web
+- Não usamos HTML e sim componentes próprios
+- Aplicamos estilo sem classes ou ID
+- Todo texto é `<Text/>` não existe estilização própria
+
+## O que é Expo? Vamos usar?
+
+- SDK com um conjunto de funcionalidades para usar (câmera, vídeo, integrações)
+- Não é necessários configurar emulador
+
+## Por que não vamos utilizar?
+
+- Limitação sobre o controle do código nativo
+- Várias bibliotecas não tem suporte para o Expo
+- O Expo liberou seu conjunto de ferramentas prontas para serem utilizadas com projetos que não utilizam Expo
+
+# Características do React Native
+
+- Não possuem valor semântico (significado)
+- Não possuem estilização própria
+- Todos componentes tem display flex como padrão
+- View: qualquer tipo de contêiner - div, footer, header, main, aside, section
+- Text: qualquer tipo de texto - p, span, strong, h1, h2, h3
+
+# Rodar o aplicativo no celular
+
+- Terminal 1
+
+```jsx
+npm start
+```
+
+- Terminal 2
+
+```jsx
+yarn android
+```
+# Typescript
+## Mitos do Typescript
+
+- Typescript diminui a produtividade
+- Typescript é transformar Javascript em Java ou C#
+- O mercado não usa Typescript
+- Typescript substitui o Javascript por completo
+- Typescript atrapalha quem é iniciante
+
+## Guia do Typescript
+
+[Typescript](https://www.notion.so/Typescript-ad7ff34d77c84fc08f6f68d2b3ffce47)
+
+# Primeiro projeto Node.JS
+1:
+
+```jsx
+yarn init -y
+```
+
+2:
+
+```jsx
+yarn add express
+```
+3:
+
+```jsx
+yarn add typescript -D
+```
+
+4:
+
+```jsx
+yarn tsc --init
+```
+5: No arquivo tsconfig.json vou setar duas propriedades a outDir e rootDir
+
+```jsx
+"outDir": "./dist",
+"rootDir": "./src",
+```
+
+6: Vai converter o código que está na pasta src na pasta dist, ou seja, vai converter o código que está em Typescript para Javascript
+
+```jsx
+yarn tsc
+```
+7: Instalar a declaração de tipos da lib
+
+```jsx
+yarn add @types/express -D
+```
+
+### O `-D` está instalando como dependência de desenvolvimento
+
+8: Para iniciar o server
+
+```jsx
+node dist/server.js
+```
+9:
+
+```jsx
+yarn add ts-node-dev -D
+```
+
+10: No arquivo package.json adicionar scripts
+
+```jsx
+"scripts": {
+    "build": "tsc",
+    "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
+}
+```
+11: Gerar ID automaticamente
+
+```jsx
+yarn add uuidv4
+```
+
+12: Biblioteca para tratar com Datas e Horários no Javascript
+
+```jsx
+yarn add date-fns
+```
+## Conceitos
+
+DTO - Data Transfer Object
+
+Services
+
+SoC
+
+DRY: Don't repeat Yourself.
+
+### SOLID
+
+Single Responsibility Principle
+
+Dependency Inversion Principle
+
+### Rota
+
+Preocupação da Rota: Receber a requisição, chamar outro arquivo para tratar a requisição e devolver uma resposta.
+
+[Repository, service e patterns](https://www.notion.so/Repository-service-e-patterns-6494ffeeb4d04f6a997d2ed377659a5f)
+
+# Iniciando back-end do app
+## Object Relational Mapping - ORM
+
+## Docker
+
+Como funciona?
+
+- Criação de ambientes isolados (container)
+- Containers expõe portas para comunicação
+
+### Principais conceitos
+
+- Imagem
+- Container
+- Docker Registry (Docker Hub)
+- Dockerfile
+    - Receita de uma imagem
+
+## Instalação do Docker
+
+### Linux (Ubuntu/Debian)
+
+No Linux, vamos instalar o Docker utilizando o `apt`, para isso, em seu terminal, execute os comandos abaixo:
+
+```jsx
+sudo apt update
+sudo apt remove docker docker-engine docker.io
+sudo apt install docker.io
+```
+
+Agora com o Docker instalado, vamos habilitar para que seu serviço seja iniciado automaticamente com o sistema:
+
+```jsx
+sudo systemctl start docker
+sudo systemctl enable docker
+```
+
+Para garantir que o Docker foi instalado da forma correta, execute no terminal:
+
+```jsx
+docker version
+```
+
+## Comandos no Docker
+
+### Criar um Container + Uma imagem do Banco de Dados
+
+```jsx
+sudo docker run --name gostack-postgres -e POSTGRES_PASSWORD=docker -p 5432:5432 -d postgres
+```
+
+Obs.:
+
+- Dar um nome ao container
+- Colocar uma senha ao container
+- Verificar se a porta está disponível
+- Colocar o banco de dados
+
+### Listar Container
+
+```jsx
+sudo docker ps
+```
+
+### Listar todos os Container
+
+```jsx
+sudo docker ps -a
+```
+
+### Iniciar o Container
+
+```jsx
+sudo docker start ID DO CONTAINER OU NOME
+```
+
+### Parar o Container
+
+```jsx
+sudo docker stop ID DO CONTAINER OU NOME
+```
+
+## Instalação do DBeaver
+
+[DBeaver](https://dbeaver.io/)
+
+## Instalação do TypeORM + PostgreSQL
+
+```jsx
+yarn add typeorm pg
+```
+
+[TypeORM - Amazing ORM for TypeScript and JavaScript (ES7, ES6, ES5). Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, WebSQL databases. Works in NodeJS, Browser, Ionic, Cordova and Electron platforms.](https://typeorm.io/#/)
+
+---
+Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
