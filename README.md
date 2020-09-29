@@ -1,6 +1,13 @@
 # 💻 Anotações do GoStack
 
-# Back-end com Node.js
+- [1. Back-end com Node.js](#1-back-end-com-node.js)
+- [2. Front-end com ReactJS](#2-front-end-com-reactJS)
+- [3. Mobile com React Native](#3-mobile-com-React-native)
+- [4. Typescript](#4-typescript)
+- [5. Primeiro projeto Node.JS](#5-primeiro-projeto-Node.JS)
+- [6. Iniciando back-end do app](#6-iniciando-back-end-do-app)
+
+# 1. Back-end com Node.js
 ## Métodos HTTP
 
 - GET: Buscar informações do back-end;
@@ -52,7 +59,7 @@ app.put('/projects/:id', (request,response) => {
     return response.json(project);
 })
 ```
-# Front-end com ReactJS
+# 2. Front-end com ReactJS
 # O que é React?
 
 - Biblioteca para construção de interfaces
@@ -167,7 +174,7 @@ function App(){
 
 export default App;
 ```
-# Mobile com React Native
+# 3. Mobile com React Native
 ## O que é React Native?
 
 - Versão do React para desenvolvimento mobile
@@ -217,7 +224,7 @@ npm start
 ```jsx
 yarn android
 ```
-# Typescript
+# 4. Typescript
 ## Mitos do Typescript
 
 - Typescript diminui a produtividade
@@ -230,7 +237,7 @@ yarn android
 
 [Typescript](https://www.notion.so/Typescript-ad7ff34d77c84fc08f6f68d2b3ffce47)
 
-# Primeiro projeto Node.JS
+# 5. Primeiro projeto Node.JS
 1:
 
 ```jsx
@@ -325,7 +332,7 @@ Preocupação da Rota: Receber a requisição, chamar outro arquivo para tratar 
 
 [Repository, service e patterns](https://www.notion.so/Repository-service-e-patterns-6494ffeeb4d04f6a997d2ed377659a5f)
 
-# Iniciando back-end do app
+# 6. Iniciando back-end do app
 ## Object Relational Mapping - ORM
 
 ## Docker
