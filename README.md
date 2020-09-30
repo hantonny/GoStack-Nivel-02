@@ -60,7 +60,7 @@ app.put('/projects/:id', (request,response) => {
 })
 ```
 # 2. Front-end com ReactJS
-# O que é React?
+## O que é React?
 
 - Biblioteca para construção de interfaces
 - Utilizando para construção de Single-Page-Applications
@@ -70,7 +70,7 @@ app.put('/projects/:id', (request,response) => {
 - ReactJS: é o comportamento no browser junto com ReactDOM
 - React Native: React + Biblioteca de elementos nativos
 
-# Vantagens
+## Vantagens
 
 - Organização do código
     - Componentização
@@ -79,13 +79,13 @@ app.put('/projects/:id', (request,response) => {
     - Front-end: Interface
 - Uma API, múltiplos clientes
 - Programação declarativa
-# JSX (Javascript XML)
+## JSX (Javascript XML)
 
 - Escrever HTML dentro do Javascript
 - Com React podemos criar nosso próprios elementos
 
-# Imperativo versus Declarativo
-# Babel /  Webpack
+## Imperativo versus Declarativo
+## Babel /  Webpack
 
 - O browser não entende todo o código
 - O Babel converte o código JS de uma forma que o browser entenda
@@ -94,7 +94,7 @@ app.put('/projects/:id', (request,response) => {
     - Ensinar ao Javascript como importar arquivos CSS, imagens e etc
     - Live reload com Webpack Dev Server
 
-# Fragmentos / Fragments
+## Fragmentos / Fragments
 
 Um padrão comum no React é que um componente pode retornar múltiplos elementos. Os Fragmentos permitem agrupar uma lista de filhos sem adicionar nós extras ao DOM.
 
@@ -131,7 +131,7 @@ function App(){
 export default App;
 ```
 
-# Conceito de Propriedades - Passando propriedades para os componentes
+## Conceito de Propriedades - Passando propriedades para os componentes
 
 ### Children é propriedades passadas no conteúdo do componente
 
@@ -203,7 +203,7 @@ export default App;
 - Várias bibliotecas não tem suporte para o Expo
 - O Expo liberou seu conjunto de ferramentas prontas para serem utilizadas com projetos que não utilizam Expo
 
-# Características do React Native
+## Características do React Native
 
 - Não possuem valor semântico (significado)
 - Não possuem estilização própria
@@ -211,7 +211,7 @@ export default App;
 - View: qualquer tipo de contêiner - div, footer, header, main, aside, section
 - Text: qualquer tipo de texto - p, span, strong, h1, h2, h3
 
-# Rodar o aplicativo no celular
+## Rodar o aplicativo no celular
 
 - Terminal 1
 
