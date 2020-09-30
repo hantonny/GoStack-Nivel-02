@@ -1,13 +1,13 @@
 # 💻 Anotações do GoStack
 
-- [1. Back-end com Node.js](#1-back-end-com-node.js)
+- [1. Back-end com NodeJS](#1-back-end-com-nodejs)
 - [2. Front-end com ReactJS](#2-front-end-com-reactjs)
 - [3. Mobile com React Native](#3-mobile-com-react-native)
 - [4. Typescript](#4-typescript)
-- [5. Primeiro projeto Node.JS](#5-primeiro-projeto-node.js)
+- [5. Primeiro projeto NodeJS](#5-primeiro-projeto-nodejs)
 - [6. Iniciando back-end do app](#6-iniciando-back-end-do-app)
 
-# 1. Back-end com Node.js
+# 1. Back-end com NodeJS
 ## Métodos HTTP
 
 - GET: Buscar informações do back-end;
@@ -237,7 +237,7 @@ yarn android
 
 [Typescript](https://www.notion.so/Typescript-ad7ff34d77c84fc08f6f68d2b3ffce47)
 
-# 5. Primeiro projeto Node.JS
+# 5. Primeiro projeto NodeJS
 1:
 
 ```jsx
