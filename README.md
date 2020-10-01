@@ -6,6 +6,7 @@
 - [4. Typescript](#4-typescript)
 - [5. Primeiro projeto NodeJS](#5-primeiro-projeto-nodejs)
 - [6. Iniciando back-end do app](#6-iniciando-back-end-do-app)
+  - [6.1 Banco de Dados](#6.1-banco-de-dados)
 
 # 1. Back-end com NodeJS
 ## Métodos HTTP
@@ -333,6 +334,7 @@ Preocupação da Rota: Receber a requisição, chamar outro arquivo para tratar 
 [Repository, service e patterns](https://www.notion.so/Repository-service-e-patterns-6494ffeeb4d04f6a997d2ed377659a5f)
 
 # 6. Iniciando back-end do app
+## 6.1 Banco de Dados
 ## Object Relational Mapping - ORM
 
 ## Docker
@@ -426,5 +428,94 @@ yarn add typeorm pg
 
 [TypeORM - Amazing ORM for TypeScript and JavaScript (ES7, ES6, ES5). Supports MySQL, PostgreSQL, MariaDB, SQLite, MS SQL Server, Oracle, WebSQL databases. Works in NodeJS, Browser, Ionic, Cordova and Electron platforms.](https://typeorm.io/#/)
 
+# Migrations
+
+## Versionamento de banco de dados
+
+### No arquivo ormconfig.json deve ser inserido as seguintes linhas de código
+
+```jsx
+"migrations": [
+    "./src/database/migrations/*.ts"
+  ],
+  "cli": {
+    "migrationsDir": "./src/database/migrations"
+  }
+```
+
+### No arquivo package.json deve ser inserido as seguintes linhas de código em "scripts"
+
+```jsx
+"typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
+```
+
+## Criar uma migrations
+
+```jsx
+yarn typeorm migration:create -n NOME DA SUA MIGRATION
+```
+
+## Como é as migrations
+
+### No método up é colocado o que deve ser feito no banco de dados, exemplo a criação de uma nova tabela.
+
+### No método down é colocado o que vou desfazer no banco de dados, exemplo excluir uma tabela ou campo dessa tabela.
+
+```jsx
+import { MigrationInterface, QueryRunner } from 'typeorm';
+
+export class CreateAppointments1601503152412 implements MigrationInterface {
+  public async up(queryRunner: QueryRunner): Promise<void> {}
+
+  public async down(queryRunner: QueryRunner): Promise<void> {}
+}
+```
+
+## Executar as migrations
+
+```jsx
+yarn typeorm migration:run
+```
+
+## Observação importante: Só pode alterar uma migrations que não foram enviados para o sistema de controle de versão Exemplo: Git.
+
+## Só pode alter migrations que estão somente na sua maquina.
+
+## Para desfazer uma migrations
+
+```jsx
+yarn typeorm migration:revert
+```
+
+## Para ver todas as migrations executadas
+
+```jsx
+yarn typeorm migration:show
+```
+## Criando model de agendamento
+
+### Usaremos o model **Appointment.ts** criado anteriormente e modificar ele de forma que será usado para representar uma instância da tabela *appointments*.
+
+### Diferente de um model normal, aqui você usará a sintaxe de decorators que servirão para conectar o nosso model ao TypeORM.
+
+## Exemplo:
+
+```jsx
+import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+
+@Entity('appointments')
+class Appointment {
+  @PrimaryGeneratedColumn('uuid')
+  id: string;
+
+  @Column()
+  provider: string;
+
+  @Column('timestamp with time zone')
+  date: Date;
+}
+
+export default Appointment;
+```
 ---
 Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
