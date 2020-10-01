@@ -517,5 +517,10 @@ class Appointment {
 
 export default Appointment;
 ```
+## Dependência reflect-metadata que é utilizada que Typescript utilizar na sintaxe Decorators
+
+```jsx
+yarn add reflect-metadata
+```
 ---
 Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
