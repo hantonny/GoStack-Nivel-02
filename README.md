@@ -6,7 +6,7 @@
 - [4. Typescript](#4-typescript)
 - [5. Primeiro projeto NodeJS](#5-primeiro-projeto-nodejs)
 - [6. Iniciando back-end do app](#6-iniciando-back-end-do-app)
-  - [6.1 Banco de Dados](#6.1-banco-de-dados)
+  - [6.1. Banco de Dados](#61-banco-de-dados)
 
 # 1. Back-end com NodeJS
 ## Métodos HTTP
@@ -334,7 +334,7 @@ Preocupação da Rota: Receber a requisição, chamar outro arquivo para tratar 
 [Repository, service e patterns](https://www.notion.so/Repository-service-e-patterns-6494ffeeb4d04f6a997d2ed377659a5f)
 
 # 6. Iniciando back-end do app
-## 6.1 Banco de Dados
+## 6.1. Banco de Dados
 ## Object Relational Mapping - ORM
 
 ## Docker
@@ -492,7 +492,7 @@ yarn typeorm migration:revert
 ```jsx
 yarn typeorm migration:show
 ```
-## Criando model de agendamento
+## Decorators - Criando model de agendamento
 
 ### Usaremos o model **Appointment.ts** criado anteriormente e modificar ele de forma que será usado para representar uma instância da tabela *appointments*.
 
