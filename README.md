@@ -7,6 +7,9 @@
 - [5. Primeiro projeto NodeJS](#5-primeiro-projeto-nodejs)
 - [6. Iniciando back-end do app](#6-iniciando-back-end-do-app)
   - [6.1. Banco de Dados](#61-banco-de-dados)
+  - [6.2. Cadastro de Usuários](#62-cadastro-de-usuários)
+
+
 
 # 1. Back-end com NodeJS
 ## Métodos HTTP
@@ -521,6 +524,17 @@ export default Appointment;
 
 ```jsx
 yarn add reflect-metadata
+```
+## 6.2. Cadastro de Usuários
+
+### Para desativar a regra CamelCase para todos os arquivos em um projeto, adicione a próxima linha ao arquivo de configuração eslint:
+
+```jsx
+rules: {
+  ...
+
+  'camelcase': 'off',
+}
 ```
 ---
 Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
