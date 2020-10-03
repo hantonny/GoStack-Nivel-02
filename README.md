@@ -1,7 +1,7 @@
 # 💻 Anotações do GoStack
 
 <p align="center">
-  <img alt="Ecoleta" src="gostack.jpg" width="50%">
+  <img alt="Gostack" src="img/gostack.jpg" width="60%">
 </p>
 
 - [1. Back-end com NodeJS](#1-back-end-com-nodejs)
@@ -86,6 +86,11 @@ app.put('/projects/:id', (request,response) => {
     - Back-end: Regra de negócio
     - Front-end: Interface
 - Uma API, múltiplos clientes
+
+<p align="center">
+  <img alt="API" src="img/api.png" width="80%">
+</p>
+
 - Programação declarativa
 ## JSX (Javascript XML)
 
@@ -93,6 +98,11 @@ app.put('/projects/:id', (request,response) => {
 - Com React podemos criar nosso próprios elementos
 
 ## Imperativo versus Declarativo
+
+<p align="center">
+  <img alt="Imperativo vs Declarativo" src="img/imperativo_vs_declarativo.png" width="100%">
+</p>
+
 ## Babel /  Webpack
 
 - O browser não entende todo o código
@@ -193,6 +203,11 @@ export default App;
 - Outras plataformas migrando, Microsoft com Windows
 
 ## Arquitetura
+
+<p align="center">
+  <img alt="Arquitetura" src="img/arquitetura.png" width="100%">
+</p>
+
 ## Sintaxe
 
 - A declaração de componentes é igual da web
@@ -625,5 +640,8 @@ yarn add bcryptjs
 ```jsx
 yarn add -D @types/bcryptjs
 ```
+![](https://tenor.com/view/the-end-end-waving-bye-goodbye-gif-16288632)
+
+
 ---
 Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
