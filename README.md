@@ -642,6 +642,29 @@ yarn add bcryptjs
 ```jsx
 yarn add -D @types/bcryptjs
 ```
+## JWT - Autenticação
+
+### Para gerar o token na aplicação é necessário fazer a instalação o pacote:
+
+```jsx
+yarn add jsonwebtoken
+```
+
+### Tipagem do pacote:
+
+```jsx
+yarn add @types/jsonwebtoken
+```
+
+### Para gerar a chave
+
+[MD5 - Online generator md5 hash](http://www.md5.cz/)
+
+### JWT Debugger
+
+[JWT.IO](https://jwt.io/)
+
+
 ![](the-end.gif)
 ---
 Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
