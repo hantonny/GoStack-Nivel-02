@@ -643,6 +643,9 @@ yarn add bcryptjs
 yarn add -D @types/bcryptjs
 ```
 ## JWT - Autenticação
+<p align="center">
+  <img alt="JWT" src="img/jwt.png" width="100%">
+</p>
 
 ### Para gerar o token na aplicação é necessário fazer a instalação o pacote:
 
