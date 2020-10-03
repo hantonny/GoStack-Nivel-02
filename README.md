@@ -640,8 +640,6 @@ yarn add bcryptjs
 ```jsx
 yarn add -D @types/bcryptjs
 ```
-![](https://tenor.com/view/the-end-end-waving-bye-goodbye-gif-16288632)
-
-
+! [] (the_end.gif)
 ---
 Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
