@@ -640,6 +640,6 @@ yarn add bcryptjs
 ```jsx
 yarn add -D @types/bcryptjs
 ```
-! [] (the_end.gif)
+![](the-end.gif)
 ---
 Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
