@@ -1,5 +1,9 @@
 # 💻 Anotações do GoStack
 
+<p align="center">
+  <img alt="Ecoleta" src="gostack.jpg" width="50%">
+</p>
+
 - [1. Back-end com NodeJS](#1-back-end-com-nodejs)
 - [2. Front-end com ReactJS](#2-front-end-com-reactjs)
 - [3. Mobile com React Native](#3-mobile-com-react-native)
@@ -535,6 +539,91 @@ rules: {
 
   'camelcase': 'off',
 }
+```
+## Alterar Migrations
+
+### Para alterar uma migrations já enviada para o GitHub ou enviada para produção, devemos criar outra migrations para fazer essa alteração.
+
+Exemplo de código que altera uma coluna na migrations
+
+```jsx
+import {
+  MigrationInterface,
+  QueryRunner,
+  TableColumn,
+  TableForeignKey,
+} from 'typeorm';
+
+export default class AlterProviderFieldToProviderId1601679625812
+  implements MigrationInterface {
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropColumn('appointments', 'provider');
+    await queryRunner.addColumn(
+      'appointments',
+      new TableColumn({
+        name: 'provider_id',
+        type: 'uuid',
+        isNullable: true,
+      }),
+    );
+    await queryRunner.createForeignKey(
+      'appointments',
+      new TableForeignKey({
+        name: 'AppointmentProvider',
+        columnNames: ['provider_id'],
+        referencedColumnNames: ['id'],
+        referencedTableName: 'users',
+        onDelete: 'SET NULL',
+        onUpdate: 'CASCADE',
+      }),
+    );
+  }
+
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropForeignKey('appointments', 'AppointmentProvider');
+
+    await queryRunner.dropColumn('appointments', 'provider_id');
+
+    await queryRunner.addColumn(
+      'appointments',
+      new TableColumn({
+        name: 'provider',
+        type: 'varchar',
+      }),
+    );
+  }
+}
+```
+
+**Observação**: O método down deve fazer todo o processo de forma inversa.
+
+## Relacionamento no SQL
+
+- Um para Um (OneToOne) - Um usuário tem um agendamento
+- Um para Muitos (OneToMany) - Um usuário tem muitos agendamentos
+- Muitos para muitos (ManyToMany) - Muitos usuários participam dos mesmos agendamentos
+
+## Princípio KISS - Keep It Simple and Stupid (Mantenha-o simples e estúpido)
+
+Sempre que possível, a complexidade deve ser evitada, pois a simplicidade garante maiores níveis de aceitação e interação do usuário.
+
+## Conceitos necessários
+
+- Repositories - Repositórios
+- Services - Se os únicos métodos utilizados forem os métodos patrões não é necessário criar um repositório.
+
+## Criptografando a senha do Usuário
+
+### Instalando biblioteca para criptografia de senha
+
+```jsx
+yarn add bcryptjs
+```
+
+### Declaração de Tipos
+
+```jsx
+yarn add -D @types/bcryptjs
 ```
 ---
 Feito com 💜 por <a href="https://www.linkedin.com/in/hantonny-korrea-2853911a0/"><b>Hantonny Korrea</b></a>
