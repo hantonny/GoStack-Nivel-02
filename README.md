@@ -14,8 +14,9 @@
 - [6. Iniciando back-end do app](#6-iniciando-back-end-do-app)
   - [6.1. Banco de Dados](#61-banco-de-dados)
   - [6.2. Cadastro de Usuários](#62-cadastro-de-usuários)
-
-
+  - [6.3. Autenticação](#63-autenticação)
+  - [6.4. Upload de imagens](#64-upload-de-imagens)
+  - [6.5. Tratando exceções](#65-tratando-exceções)
 
 # 1. Back-end com NodeJS
 ## Métodos HTTP
@@ -642,7 +643,8 @@ yarn add bcryptjs
 ```jsx
 yarn add -D @types/bcryptjs
 ```
-## JWT - Autenticação
+## 6.3. Autenticação
+### JWT
 <p align="center">
   <img alt="JWT" src="img/jwt.png" width="100%">
 </p>
@@ -666,6 +668,51 @@ yarn add @types/jsonwebtoken
 ### JWT Debugger
 
 [JWT.IO](https://jwt.io/)
+
+## 6.4. Upload de imagens
+
+### Upload de arquivos
+
+```jsx
+yarn add multer
+```
+
+### Adicionando a tipagem
+
+```jsx
+yarn add -D @types/multer
+```
+## 6.5. Tratando exceções
+
+### Exception Handling - Tratamento de exceção
+
+### Criar uma pasta errors dentro da pasta src, e criar o arquivo AppError.ts com o seguinte código.
+
+```jsx
+class AppError { 
+    public readonly message: string
+
+    public readonly statusCode: number
+
+    constructor(message: string, statusCode = 400){
+        this.message = message
+        this.statusCode = statusCode
+    }
+}
+
+export default AppError
+```
+### Depois em todos os services trocar Error por AppError, sendo possível passa o status Code e também trocar no middlewares
+
+```jsx
+throw new AppError('Incorrect email/password combination.', 401);
+```
+
+### Tratar de forma global os erros com o pacote em funções async / await
+
+```jsx
+yarn add express-async-errors
+```
 
 
 ![](the-end.gif)
